@@ -69,19 +69,14 @@ var files=[];
         
         )
     })
-    
-
     }
 
 const Retrive = () =>{
     ImgName = document.getElementById('imgname').value;
-    
     firebase.database().ref('Pictures/' + ImgName)
        .on('value' , function(snapshot){
            document.getElementById('img').src=snapshot.val().Link;
-
        })
-
     }
 
 
