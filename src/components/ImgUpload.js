@@ -37,7 +37,7 @@ var files=[];
     
         uploadTask.on('state_changed' , function(snapshot){
             var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            document.getElementById('upprogress') .innerHTML='Uploading'+progress+"%";
+            document.getElementById('upprogress').innerHTML='Uploading'+progress+"%";
     
         },
     
