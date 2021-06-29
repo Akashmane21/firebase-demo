@@ -31,7 +31,8 @@ const[imglist,newimglist]=useState()
         for(let id in imgs){
             imgList.push({id, ...imgs[id]})
         }
-        newimglist(imgList)
+        const reversed = imgList.reverse()
+        newimglist(reversed)
 console.log(imgList);
 
 

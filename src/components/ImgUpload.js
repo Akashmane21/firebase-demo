@@ -58,12 +58,15 @@ var files=[];
     console.log("database is clear");
     
     
-            firebase.database().ref('Pictures/' + ImgName)
-            .set({
-                Name :ImgName,
-                Link:ImgUrl
-                 })
-    
+    const imgref =       firebase.database().ref('Pictures')
+    const imgs = {
+                   Name :ImgName,
+                  Link:ImgUrl
+                 }
+
+        imgref.push(imgs)
+
+
             alert("Image Added Successfuly")
         }
         
