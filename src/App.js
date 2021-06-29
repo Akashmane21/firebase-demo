@@ -8,6 +8,7 @@ function App() {
     <div className="App">
      <h1>Akash's Feed</h1>
      <Form />
+
      <Todolist />
      {/* <ImgUpload /> */}
     </div>

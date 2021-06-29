@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import firebase from '../db/firebase'
 import Todo from './Todo'
 import Imglist from './Imglist'
+
+import '../App.css'
 export default function Todolist() {
     
   const[todoList , setTodoList] = useState()
@@ -41,7 +43,12 @@ console.log(imgList);
         <div className="todolist">
             {todoList ? todoList.map((todo , index)=> <Todo todo={todo} key={index}/>) : ""}
         </div>
+        <h1>Image's</h1>
+
+        <div className="imagelisting">
             {imglist ? imglist.map((img , index)=> <Imglist img={img} key={index}/>) : ""}
+        </div>
+
 
         </div>
     )

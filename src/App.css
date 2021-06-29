@@ -10,12 +10,18 @@
 
 }
 body{
-  background-color: #101011;
+  background-color: 
+  #0d1117;
 
 }
 
 h1{
   color: aqua;
+  font-family: Bioweapon ,sans-serif;
+
+}
+
+h2{
   font-family: Bioweapon ,sans-serif;
 
 }
@@ -26,13 +32,6 @@ h1{
 }
 
 
-img{
-  height: 200px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  border: 1px solid chartreuse;
-
-}
 
 .block{
   padding: 30px;
@@ -42,12 +41,11 @@ img{
   border-radius: 10px;
 
   box-shadow: 0px 3px 5px 0px rgb(138, 135, 135);
-  /* background-color: rgb(50, 106, 116); */
 }
 
 .todobox{
   width: 170px;
-  background-color: gray;
+  background-color: #21262d;
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
@@ -84,7 +82,7 @@ button{
 
 .deletebtn{
   background-color: rgba(231, 13, 13, 0.397);
-  color: red;
+  color: rgb(2, 2, 2);
   font-weight: bolder;
 }
 
@@ -104,14 +102,41 @@ input{
 
 .form > button{
   border-radius: 100px;
-  margin-left: 30px;
+  margin-left: 10px;
   padding: 10px;
 }
 
 
-@media(max-width:500px){
+.imagelisting{
+ margin-top: 50px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* background-color: aqua; */
+}
 
-  
+.imgbox{
+  width: 30%;
+  height: auto;
+  /* overflow: scroll; */
+background-color: #21262d;
+margin: 5px;
+border-radius: 10px;
+padding: 5px;
+}
+
+img{
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  /* border: 1px solid chartreuse; */
+}
+
+
+
+@media(max-width:500px){
 
   .todobox{
     width: 40%;
@@ -119,7 +144,19 @@ input{
     margin-right: 5px;
     margin-bottom: 5px;
   }
-  
+  .imagelisting{
+    display: block;
+    /* width: 100%; */
+  }
+  .imgbox{
+  width: 95%;
+  height: auto;
+  }
+
+  img{
+    height: 100%;
+    width: 300px;
+  }
 }
 
 

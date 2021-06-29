@@ -3,9 +3,9 @@ import React from 'react'
 export default function Imglist({img}) {
     console.log(img);
     return (
-        <div>
+        <div className="imgbox">
             <img src={img.Link} alt="" />
-           <h1>Name : {img.Name}  </h1>  
+           <h2>{img.Name}  </h2>  
         </div>
     )
 }

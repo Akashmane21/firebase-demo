@@ -24,7 +24,7 @@ const completetodo=()=>{
 
           <div className="btns">
             <button className="deletebtn" onClick={deletetodo}>Delete</button>
-            <button className="completebtn" onClick={completetodo}>Complete</button>
+            <button className="completebtn" onClick={completetodo}>Copy</button>
            </div>
 
         </div>
