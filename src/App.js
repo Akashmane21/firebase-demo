@@ -1,7 +1,6 @@
 import './App.css';
 import Form from './components/Form'
 import Todolist from './components/Todolist';
-// import ImgUpload from './components/ImgUpload'
 function App() {
 
   return (
@@ -10,7 +9,6 @@ function App() {
      <Form />
 
      <Todolist />
-     {/* <ImgUpload /> */}
     </div>
   );
 }

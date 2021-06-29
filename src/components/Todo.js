@@ -4,19 +4,29 @@ import '../App.css'
 
 export default function Todo({todo}) {
     console.log(todo);
-    const deletetodo = () =>{
-        const todoref = firebase.database().ref('Todo').child(todo.id);
-        todoref.remove()
-    }
-
-const completetodo=()=>{
-
     
-    const todoref = firebase.database().ref('Todo').child(todo.id);
-    todoref.update({
-        complete:!todo.complete,
-    })
-}
+        const deletetodo = () =>{
+            const todoref = firebase.database().ref('Todo').child(todo.id);
+            todoref.remove()
+        }
+
+
+    const completetodo=()=>{
+
+        
+        const todoref = firebase.database().ref('Todo').child(todo.id);
+        todoref.update({
+            complete:!todo.complete,
+        })
+        
+
+        navigator.clipboard.writeText(todo.title)
+        // todo.title.select();
+      
+        // document.execCommand("copy");
+      
+        alert("Copied the text: " + todo.title);
+    }
 
     return (
         <div className="todobox">

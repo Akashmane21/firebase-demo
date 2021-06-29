@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import firebase from '../db/firebase'
 import Todo from './Todo'
 import Imglist from './Imglist'
+import ImgUpload from './ImgUpload'
 
 import '../App.css'
 export default function Todolist() {
@@ -19,7 +20,8 @@ const[imglist,newimglist]=useState()
       for(let id in todos){
         todoList.push({id, ...todos[id]})
       }
-      setTodoList(todoList)
+      const reversed = todoList.reverse()
+      setTodoList(reversed)
     })
 
       const imgref = firebase.database().ref('Pictures');
@@ -44,7 +46,9 @@ console.log(imgList);
             {todoList ? todoList.map((todo , index)=> <Todo todo={todo} key={index}/>) : ""}
         </div>
         <h1>Image's</h1>
-
+     
+     
+     <ImgUpload />
         <div className="imagelisting">
             {imglist ? imglist.map((img , index)=> <Imglist img={img} key={index}/>) : ""}
         </div>

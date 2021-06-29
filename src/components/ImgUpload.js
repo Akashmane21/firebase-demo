@@ -71,28 +71,30 @@ var files=[];
     })
     }
 
-const Retrive = () =>{
-    ImgName = document.getElementById('imgname').value;
-    firebase.database().ref('Pictures/' + ImgName)
-       .on('value' , function(snapshot){
-           document.getElementById('img').src=snapshot.val().Link;
-       })
-    }
+// const Retrive = () =>{
+//     ImgName = document.getElementById('imgname').value;
+//     firebase.database().ref('Pictures/' + ImgName)
+//        .on('value' , function(snapshot){
+//            document.getElementById('img').src=snapshot.val().Link;
+//        })
+//     }
 
 
 
 
     return (
-        <div>
+        <div className="imgboxall">
             
             <div class="block">
-            Name of the Image <input type="text" id="imgname" /> <br />
+            <input type="text" id="imgname" /> <br />
             <img src="https://i.imgur.com/Kt3A11F.jpg" id="img" alt="" />
             <label id="upprogress"></label>
-
-            <button onClick={Choose}>Choose Image</button>
-            <button onClick={Upload} id="upload">Upload</button>
-            <button onClick={Retrive} id="get">Retrive</button>
+<div className="btnsall">
+            <button className="completebtn" onClick={Choose}>Choose Image</button>
+            <br />
+            <button className="completebtn" onClick={Upload} id="upload">Upload</button>
+            {/* <button onClick={Retrive} id="get">Retrive</button> */}
+            </div>
             </div>
         </div>
     )
