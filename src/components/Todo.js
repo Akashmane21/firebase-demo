@@ -10,6 +10,8 @@ export default function Todo({todo}) {
     }
 
 const completetodo=()=>{
+
+    
     const todoref = firebase.database().ref('Todo').child(todo.id);
     todoref.update({
         complete:!todo.complete,

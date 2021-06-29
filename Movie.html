@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <style>
+        img{
+            width: 80%;
+            height: 80%;
+        }
+
+        #error{
+            color: rgba(108, 112, 112, 0.226);
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="bg">
+    </div>
+    <input type="text" id="Title">
+    <Button onclick=Search()>Search</Button><br>
+ <p id="data"></p>
+ <h2 id="error"></h2>
+ Poster 
+<img src="" id="Poster" alt=""><br>
+ Actors
+<input type="text" id="Actors"><br>
+Country
+<input type="text" id="Country"><br>
+Plot
+<textarea name="text" id="Plot" cols="30" rows="10"></textarea><br>
+Genre
+<input type="text" id="Genre">
+Released
+<input type="text" id="Released">
+Runtime
+<input type="text" id="Runtime">
+Year
+<input type="text" id="Year">
+imdbRating
+<input type="text" id="imdbRating">
+Director
+<input type="text" id="Director">
+
+<Button onclick=send()>Submit</Button>
+
+
+    <script>
+        function Search(){
+            var title = document.getElementById('Title').value
+            var url = `http://www.omdbapi.com/?t=${title}&apikey=d7cd7e9e`
+            fetch(url)
+                .then(response => response.json())
+                .then(data => (
+                    console.table(data),
+                    data.Response == "False" ?  document.getElementById('error').innerHTML=data.Error :
+                    document.getElementById('error').innerHTML="",
+                    document.getElementById('Actors').value=data.Actors,
+                    document.getElementById('Country').value=data.Country,
+                    document.getElementById('Genre').value=data.Genre,
+                    document.getElementById('Released').value=data.Released,
+                    document.getElementById('Runtime').value=data.Runtime,
+                    document.getElementById('Year').value=data.Year,
+                    document.getElementById('imdbRating').value=data.imdbRating,
+                    document.getElementById('Director').value=data.Director,
+                    document.getElementById('Poster').src=data.Poster,
+                    document.getElementById('Plot').value=data.Plot
+
+                )
+                
+                );
+            console.log(title);
+        }
+
+
+
+
+
+
+
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyALrAZvIP4QBIS3RdqwZhOlYHmehgqRGrg",
+    authDomain: "show-time-f1227.firebaseapp.com",
+    projectId: "show-time-f1227",
+    storageBucket: "show-time-f1227.appspot.com",
+    messagingSenderId: "970515632532",
+    appId: "1:970515632532:web:e75f4244d5b31cb3827f81"
+  };
+  // Initialize Firebase
+//   firebase.initializeApp(firebaseConfig);
+
+const showTimeDB = firebase.initializeApp(firebaseConfig);
+
+console.log(showTimeDB);
+function send(){
+const Request = showTimeDB.database().ref('Show-Time/Request');
+ const data = { 
+  UserName : "name",
+  Email  : "email",
+  Phone : "phone",
+  Movie  : "movie"
+}
+
+
+
+Request.push(data)
+}
+    </script>
+</body>
+</html>
