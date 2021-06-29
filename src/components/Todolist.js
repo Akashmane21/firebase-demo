@@ -38,7 +38,9 @@ console.log(imgList);
 
     return (
         <div>
+        <div className="todolist">
             {todoList ? todoList.map((todo , index)=> <Todo todo={todo} key={index}/>) : ""}
+        </div>
             {imglist ? imglist.map((img , index)=> <Imglist img={img} key={index}/>) : ""}
 
         </div>

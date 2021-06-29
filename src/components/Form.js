@@ -19,9 +19,9 @@ todoref.push(todo)
 
 }
     return (
-        <div>
+        <div className="form">
             <input type="text" onChange={handleonChange} value={title} />
-            <button  onClick={createTodo}>Add</button>
+            <button className="add"  onClick={createTodo}>➕</button>
         </div>
     )
 }

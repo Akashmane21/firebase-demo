@@ -1,7 +1,7 @@
 import './App.css';
 import Form from './components/Form'
 import Todolist from './components/Todolist';
-import ImgUpload from './components/ImgUpload'
+// import ImgUpload from './components/ImgUpload'
 function App() {
 
   return (
@@ -9,7 +9,7 @@ function App() {
      <h1>Akash's Feed</h1>
      <Form />
      <Todolist />
-     <ImgUpload />
+     {/* <ImgUpload /> */}
     </div>
   );
 }

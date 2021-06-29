@@ -19,10 +19,13 @@ const completetodo=()=>{
 }
 
     return (
-        <div>
+        <div className="todobox">
             <h3 className={todo.complete?"complete":""}>{todo.title}</h3>
-            <button onClick={deletetodo}>Delete</button>
-            <button onClick={completetodo}>Complete</button>
+
+          <div className="btns">
+            <button className="deletebtn" onClick={deletetodo}>Delete</button>
+            <button className="completebtn" onClick={completetodo}>Complete</button>
+           </div>
 
         </div>
     )
