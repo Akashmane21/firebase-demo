@@ -15,6 +15,7 @@ const[imglist,newimglist]=useState()
   useEffect(()=>{
     const todoref = firebase.database().ref('Todo');
     todoref.on('value' , (snapshot)=>{
+      console.log(snapshot.val());
       const todoList = []
       const todos =snapshot.val()
       for(let id in todos){
@@ -26,6 +27,8 @@ const[imglist,newimglist]=useState()
 
       const imgref = firebase.database().ref('Pictures');
       imgref.on('value' , (snapshot)=>{
+        console.log(snapshot.val());
+
         const imgList = []
         const imgs =snapshot.val()
         for(let id in imgs){
@@ -33,7 +36,6 @@ const[imglist,newimglist]=useState()
         }
         const reversed = imgList.reverse()
         newimglist(reversed)
-console.log(imgList);
 
 
    })

@@ -11,6 +11,32 @@
   align-items: center;
 
 }
+
+.Auth{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+
+}
+
+.Auth > button{
+  padding: 10px 20px;
+  background-color: orangered;
+  border-radius: 20px;
+  outline: 0px;
+  font-size: 20px;
+  color: white;
+  margin-top: 20px;
+}
+.Auth > button:hover{
+  background-color: white;
+  border: 1px solid orangered;
+  color: orangered;
+  cursor: pointer;
+}
 body{
   background-color: 
   #0d1117;
@@ -84,6 +110,7 @@ h3{
 .btnsall{
   display: flex;
   /* width: 20%; */
+  flex-direction: column;
   justify-content: space-between;
 }
 

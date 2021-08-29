@@ -2,7 +2,6 @@ import React from 'react'
 import firebase from '../db/firebase'
 
 export default function Imglist({img}) {
-    console.log(img);
     const deletetodo = () =>{
         const todoref = firebase.database().ref('Pictures').child(img.id);
         todoref.remove()
